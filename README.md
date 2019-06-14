@@ -34,35 +34,63 @@ git clone https://[user]@bitbucket.endava.com/scm/bd/devops-rampup.git
 To complete the challenge, create a branching strategy, provide a diagram of how the git flow works and the commands needed to interact to it for each actor in a software delivery team (developer, design lead, tester).
 
 
-### 2. AWS
+### 2. Cloud Environment
 
-The objective of this challenge is to set up the environments on which the application will run.
+The objective of this challenge is to set up the cloud environment on which the application will run, whether is Azure or AWS.
 
 To complete this challenge, create the environments to run the application you cloned in the last environment.
 
 There are 2 setups. Create at least the first one to complete the Challenge.
 
 
-#### SetUp 1
+#### Azure SetUp 1
 
-![alt text][logo]
+![alt text][azurelogo1]
 
-[logo]:AWSSetup3.png "First SetUp"
+[azurelogo1]:AzureSetup1.jpeg "AzureFirstSetUp"
 
 Some of the steps needed:
- - Create an AWS account
- - Setup a custom VPC.
- - Create a public and a private VPC.
- - Create route tables.
- - Setup a connection to internet (Internet Gateway and NAT).
- - Create ACL ans SG's (Security).
- - Setup an EC2 instances.
+ - Create an Azure account
+ - Setup a Virtual Network.
+ - Create a public and a private subnets. Associate them to the Vnet.
+ - Create a public IP and a load balancer.
+ - Create as Network Security Groups as needed (Security).
+ - Setup Virtual Machines for each case.
 
-#### SetUp 2
+#### Azure SetUp 2
+In case you already have some knowledge on Azure basics, this setup is meant to create a high availability architecture. This one is optional.
+  ![alt text][azurelogo2]
+
+ [azurelogo2]:AzureSetup2.jpeg "AzureSecondSetUp"
+
+Additional steps for this setup.
+  - Setup an Azure Application Gateway. Consider improve the security using WAF.
+  - Create a new subnet in the second availability zone.
+  - Configure Availability Sets for all virtual machines (Jumpbox is not included).
+  - Evaluate the option to add a new load balancer for the backend service.
+  - Implement a replica set for Azure Database for Mysql.
+
+### AWS SetUp 1
+
+![alt text][awslogo1]
+
+[awslogo1]:AWSSetup3.png "AWSFirstSetUp"
+
+Some of the steps needed:
+
+  - Create an AWS account.
+  - Setup a custom VPC.
+  - Create a public and a private VPC.
+  - Create route tables.
+  - Setup a connection to internet (Internet Gateway and NAT).
+  - Create ACL ans SG's (Security).
+  - Setup an EC2 instances.
+
+#### AWS SetUp 2
 In case you already have some knowledge on AWS basics, this setup is meant to create a high availability architecture. This one is optional.
-  ![alt text][logo2]
+  ![alt text][awslogo2]
 
- [logo2]:https://bitbucket.endava.com/projects/BD/repos/devops-rampup/raw/AWSSetup2.png?at=refs%2Fheads%2Fmaster "First SetUp"
+ [awslogo2]:https://bitbucket.endava.com/projects/BD/repos/devops-rampup/raw/AWSSetup2.png?at=refs%2Fheads%2Fmaster "First SetUp"
 
 Additional steps for this setup.
   - Setup an Elastic Load Balancer.
