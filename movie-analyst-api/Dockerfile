@@ -13,8 +13,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-ENV DB_HOST
-
 EXPOSE 3000
 
 CMD [ "node", "server.js" ]
